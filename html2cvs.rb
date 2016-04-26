@@ -9,7 +9,7 @@ require 'csv'
 ### document = File.open("invoices.html") { |f| Nokogiri::XML(f) }
 ### document = Nokogiri::HTML(open("http://www.itl.nist.gov/div898/handbook/eda/section3/eda3672.htm")) { |f| Nokogiri::XML(f) }
 ### document = Nokogiri::HTML(open("http://aws-t2/C/invoices.html")) { |f| Nokogiri::XML(f) }
-document = File.open("invoices.html") { |f| Nokogiri::XML(f) }
+document = File.open("invoices-issue54.html") { |f| Nokogiri::XML(f) }
 
 document.at('table').search('tr').each do |row|
   cells = row.search('th, td').map { |cell| cell.text.strip }
